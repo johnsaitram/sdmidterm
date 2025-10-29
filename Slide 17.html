@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Sensor Health &amp; Failsafe Response</title>
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Montserrat:wght@400;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet">
+<style>
+    body, html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+    }
+    .slide-container {
+        width: 1280px;
+        min-height: 720px;
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        font-family: 'Inter', sans-serif;
+        color: #333;
+        background-color: #ffffff;
+    }
+    .header {
+        background-color: #0E376D;
+        padding: 20px 40px;
+        color: white;
+    }
+    .header h1 {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 700;
+        font-size: 36px;
+        margin: 0;
+    }
+    .content-container {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        padding: 20px 40px;
+    }
+    .section-title {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 600;
+        font-size: 24px;
+        color: #0E376D;
+        margin-top: 15px;
+        margin-bottom: 15px;
+        display: flex;
+        align-items: center;
+    }
+    .section-title i {
+        margin-right: 12px;
+        font-size: 22px;
+    }
+    .data-table {
+        width: 100%;
+        border-collapse: collapse;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        border-radius: 8px;
+        overflow: hidden;
+    }
+    .data-table thead {
+        background-color: #0E376D;
+        color: white;
+    }
+    .data-table th {
+        padding: 12px 15px;
+        text-align: center;
+        font-weight: 600;
+        font-size: 16px;
+        border-right: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    .data-table th:first-child {
+        text-align: left;
+        width: 25%;
+    }
+    .data-table th:last-child {
+        border-right: none;
+    }
+    .data-table tbody tr:nth-child(odd) {
+        background-color: rgba(14, 55, 109, 0.05);
+    }
+    .data-table td {
+        padding: 10px 15px;
+        text-align: left;
+        border-right: 1px solid rgba(14, 55, 109, 0.1);
+        font-size: 15px;
+    }
+    .data-table td:first-child {
+        font-weight: 600;
+        border-left: 4px solid transparent;
+    }
+    .data-table td:last-child {
+        border-right: none;
+    }
+    .data-table tr:hover td {
+        background-color: rgba(14, 55, 109, 0.08);
+    }
+    .data-table tr:hover td:first-child {
+        border-left: 4px solid #0E376D;
+    }
+    .failsafe-container {
+        background-color: rgba(14, 55, 109, 0.05);
+        border-radius: 8px;
+        padding: 15px 25px;
+        margin-top: 20px;
+        border-left: 4px solid #0E376D;
+    }
+    .bullet-list {
+        list-style-type: none;
+        padding-left: 0;
+        margin: 10px 0;
+    }
+    .bullet-list li {
+        padding: 8px 0;
+        display: flex;
+        align-items: flex-start;
+        font-size: 16px;
+    }
+    .bullet-list li i {
+        color: #0E376D;
+        margin-right: 12px;
+        min-width: 20px;
+        text-align: center;
+        margin-top: 3px;
+    }
+    .footer {
+        padding: 15px 40px;
+        display: flex;
+        justify-content: space-between;
+        font-size: 14px;
+        color: rgba(14, 55, 109, 0.7);
+        border-top: 1px solid rgba(14, 55, 109, 0.1);
+    }
+</style>
+</head>
+<body style="">
+<div class="slide-container">
+<div class="header">
+<h1>Sensor Health &amp; Failsafe Response</h1>
+</div>
+<div class="content-container">
+<div class="section-title">
+<i class="fas fa-heartbeat"></i>
+<p>Are the sensors functioning?</p>
+</div>
+<table class="data-table">
+<thead>
+<tr>
+<th>Failure Type</th>
+<th>What it looks like in data</th>
+<th>Example Cause</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Disconnected / shorted</td>
+<td>Values stuck at 0 or 1023 (max ADC)</td>
+<td>Loose wire, broken lead</td>
+</tr>
+<tr>
+<td>Frozen output</td>
+<td>Same reading for a long time</td>
+<td>Software lock, bus hang</td>
+</tr>
+<tr>
+<td>Unrealistic reading</td>
+<td>Way outside human limits</td>
+<td>Noise, wrong calibration</td>
+</tr>
+<tr>
+<td>Spiking / glitching</td>
+<td>Sudden impossible jumps</td>
+<td>Poor contact, EMI noise</td>
+</tr>
+</tbody>
+</table>
+<div class="section-title">
+<i class="fas fa-exclamation-triangle" style="position: relative; transform: translate(-2.22529px, 8.90115px);"></i>
+<p style="position: relative; transform: translate(0px, 7.78851px);">What if one or more sensors fail</p>
+</div>
+<div class="failsafe-container">
+<ul class="bullet-list">
+<li>
+<i class="fas fa-arrow-right"></i>
+<p>If 1 sensor fails, the others automatically share its weight.</p>
+</li>
+<li>
+<i class="fas fa-arrow-right"></i>
+<p>If 2 fail, the remaining one still works at full weight (100%).</p>
+</li>
+<li>
+<i class="fas fa-arrow-right"></i>
+<p>If all fail, the system enters a failsafe mode (mid-level cooling + alert).</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="footer">
+<div>
+<p>NYIT College of Engineering and Computing Sciences</p>
+</div>
+<div>
+<p>SmartCap Project • EENG 489</p>
+</div>
+</div>
+</div>
+
+</body></html>

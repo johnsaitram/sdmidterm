@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Cooling with PWM</title>
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Montserrat:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet"/>
+<style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            font-family: 'Inter', sans-serif;
+            color: #333;
+            background-color: #ffffff;
+        }
+        .header {
+            background-color: #0E376D;
+            padding: 20px 40px;
+            color: white;
+        }
+        .header h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 36px;
+            margin: 0;
+        }
+        .content-container {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            padding: 30px 40px;
+        }
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .data-table thead {
+            background-color: #0E376D;
+            color: white;
+        }
+        .data-table th {
+            padding: 15px;
+            text-align: center;
+            font-weight: 600;
+            font-size: 18px;
+            border-right: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .data-table th:first-child {
+            text-align: left;
+            width: 20%;
+        }
+        .data-table tbody tr:nth-child(odd) {
+            background-color: rgba(14, 55, 109, 0.05);
+        }
+        .data-table td {
+            padding: 12px 15px;
+            text-align: center;
+            border-right: 1px solid rgba(14, 55, 109, 0.1);
+            font-size: 16px;
+        }
+        .data-table td:first-child {
+            text-align: left;
+            font-weight: 600;
+            border-left: 4px solid transparent;
+        }
+        .data-table tr:hover td {
+            background-color: rgba(14, 55, 109, 0.08);
+        }
+        .data-table tr:hover td:first-child {
+            border-left: 4px solid #0E376D;
+        }
+        .footer-callout {
+            background-color: rgba(14, 55, 109, 0.05);
+            border-radius: 8px;
+            padding: 15px 25px;
+            margin-top: 30px;
+            text-align: center;
+            border-left: 4px solid #0E376D;
+        }
+        .footer-callout p {
+            margin: 0;
+            font-size: 16px;
+            font-weight: 500;
+            color: #0E376D;
+        }
+        .footer {
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            font-size: 14px;
+            color: rgba(14, 55, 109, 0.7);
+            border-top: 1px solid rgba(14, 55, 109, 0.1);
+        }
+        .pwm-output {
+            font-family: 'Roboto Mono', monospace;
+            white-space: nowrap;
+        }
+        .emergency {
+            color: #d00000;
+            font-weight: 600;
+        }
+        .full-cool {
+            color: #0077b6;
+            font-weight: 600;
+        }
+        .pre-cool {
+            color: #0096c7;
+            font-weight: 600;
+        }
+        .idle {
+            color: #8d99ae;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+<div class="slide-container">
+<div class="header">
+<h1>Cooling with PWM – Risk-based Control</h1>
+</div>
+<div class="content-container">
+<table class="data-table">
+<thead>
+<tr>
+<th>Risk Level</th>
+<th>PWM Output</th>
+<th>Cooling State</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&lt; 0.3</td>
+<td class="pwm-output">Fan = 0%<br/>Peltier = 0%</td>
+<td class="idle">Idle</td>
+<td><p>Safe condition - no cooling needed</p></td>
+</tr>
+<tr>
+<td>0.3 - 0.6</td>
+<td class="pwm-output">Fan = 40%<br/>Peltier = 30%</td>
+<td class="pre-cool">Pre-Cool</td>
+<td><p>Warming up - preventive cooling begins</p></td>
+</tr>
+<tr>
+<td>0.6 - 0.8</td>
+<td class="pwm-output">Fan = 80%<br/>Peltier = 60%</td>
+<td class="full-cool">Full-Cool</td>
+<td><p>Getting hot - strong cooling activated</p></td>
+</tr>
+<tr>
+<td>&gt; 0.8</td>
+<td class="pwm-output">Fan = 100%<br/>Peltier = 100%</td>
+<td class="emergency">Emergency</td>
+<td><p>Overheat prevention - maximum cooling</p></td>
+</tr>
+</tbody>
+</table>
+<div class="footer-callout">
+<p>PWM (Pulse-Width Modulation) enables precise control over cooling intensity rather than simple on/off switching, optimizing power usage and cooling effectiveness.</p>
+</div>
+</div>
+<div class="footer">
+<div>
+<p>NYIT College of Engineering and Computing Sciences</p>
+</div>
+<div>
+<p>SmartCap Project • EENG 489</p>
+</div>
+</div>
+</div>
+</body>
+</html>

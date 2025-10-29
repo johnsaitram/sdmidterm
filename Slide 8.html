@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+
+<html data-theme="light" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Project Status – Detailed Breakdown</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Montserrat:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<style>
+    body, html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+    }
+    .slide-container {
+        width: 1280px;
+        min-height: 720px;
+        max-height: 720px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        font-family: 'Inter', sans-serif;
+        color: #333;
+        background-color: #ffffff;
+    }
+    .header {
+        background-color: #0E376D;
+        padding: 15px 40px;
+        color: white;
+    }
+    .header h1 {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 700;
+        font-size: 28px;
+        margin: 0;
+    }
+    .content-container {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        padding: 15px 40px 5px;
+        overflow: auto;
+    }
+    .wbs-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 15px;
+        font-size: 14px;
+    }
+    .wbs-table thead {
+        background-color: #0E376D;
+        color: white;
+    }
+    .wbs-table th {
+        padding: 10px;
+        text-align: left;
+        font-weight: 600;
+        white-space: nowrap;
+    }
+    .wbs-table th:last-child {
+        text-align: center;
+    }
+    .wbs-table td {
+        padding: 8px 10px;
+        text-align: left;
+        border-bottom: 1px solid rgba(14, 55, 109, 0.1);
+    }
+    .wbs-table td:last-child {
+        text-align: center;
+    }
+    .category-row {
+        background-color: rgba(14, 55, 109, 0.1);
+        font-weight: 600;
+    }
+    .wbs-table tr:nth-child(even):not(.category-row) {
+        background-color: rgba(14, 55, 109, 0.03);
+    }
+    .progress-bar {
+        height: 22px;
+        width: 120px;
+        background-color: #e2e8f0;
+        border-radius: 4px;
+        overflow: hidden;
+        position: relative;
+    }
+    .progress-fill {
+        height: 100%;
+        background-color: #10B981;
+        border-radius: 4px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-weight: 600;
+        font-size: 13px;
+    }
+    .zero-progress {
+        width: 0%;
+    }
+    .zero-progress-text {
+        position: absolute;
+        left: 0;
+        right: 0;
+        text-align: center;
+        color: #555;
+        font-size: 13px;
+        font-weight: 600;
+    }
+    .footer-status {
+        background-color: rgba(14, 55, 109, 0.05);
+        border-radius: 8px;
+        padding: 10px 20px;
+        margin-top: 5px;
+        text-align: center;
+    }
+    .footer-status p {
+        margin: 0;
+        font-size: 15px;
+        font-weight: 500;
+        color: #0E376D;
+    }
+    .footer {
+        padding: 12px 40px;
+        display: flex;
+        justify-content: space-between;
+        font-size: 13px;
+        color: rgba(14, 55, 109, 0.7);
+        border-top: 1px solid rgba(14, 55, 109, 0.1);
+        margin-top: auto;
+    }
+    .category-cell {
+        font-weight: 600;
+        font-size: 15px;
+    }
+    .indent-task {
+        padding-left: 20px;
+    }
+    .double-indent-task {
+        padding-left: 40px;
+    }
+</style>
+</head>
+<body>
+<div class="slide-container">
+<div class="header">
+<h1>Project Status – Detailed Breakdown</h1>
+</div>
+<div class="content-container">
+<table class="wbs-table">
+<thead>
+<tr>
+<th>WBS NUMBER</th>
+<th>TASK TITLE</th>
+<th>START DATE</th>
+<th>DUE DATE</th>
+<th>PCT OF TASK COMPLETE</th>
+</tr>
+</thead>
+<tbody>
+<tr class="category-row">
+<td>1</td>
+<td class="category-cell">Electrical Hardware</td>
+<td>9/14/25</td>
+<td>11/9/25</td>
+<td>
+<div class="progress-bar">
+<div class="progress-fill" style="width: 75%">75%</div>
+</div>
+</td>
+</tr>
+<tr>
+<td>1.1.1</td>
+<td class="indent-task">Build sensor circuit on breadboard</td>
+<td>9/14/25</td>
+<td>9/28/25</td>
+<td>
+<div class="progress-bar">
+<div class="progress-fill" style="width: 100%">100%</div>
+</div>
+</td>
+</tr>
+<tr>
+<td>1.1.2</td>
+<td class="indent-task">Build actuator circuit on breadboard</td>
+<td>9/28/25</td>
+<td>10/12/25</td>
+<td>
+<div class="progress-bar">
+<div class="progress-fill" style="width: 100%">100%</div>
+</div>
+</td>
+</tr>
+<tr>
+<td>1.2</td>
+<td class="indent-task">Combine all electrical components on breadboard</td>
+<td>10/12/25</td>
+<td>10/26/25</td>
+<td>
+<div class="progress-bar">
+<div class="progress-fill" style="width: 100%">100%</div>
+</div>
+</td>
+</tr>
+<tr>
+<td>1.3</td>
+<td class="indent-task">Move project onto the helmet</td>
+<td>10/26/25</td>
+<td>11/9/25</td>
+<td>
+<div class="progress-bar">
+<div class="progress-fill zero-progress"></div>
+<span class="zero-progress-text">0%</span>
+</div>
+</td>
+</tr>
+<tr class="category-row">
+<td>2</td>
+<td class="category-cell">Software</td>
+<td>9/14/25</td>
+<td>11/2/25</td>
+<td>
+<div class="progress-bar">
+<div class="progress-fill" style="width: 83%">83%</div>
+</div>
+</td>
+</tr>
+<tr>
+<td>2.1</td>
+<td class="indent-task">Code for all sensors</td>
+<td>9/14/25</td>
+<td>10/12/25</td>
+<td>
+<div class="progress-bar">
+<div class="progress-fill" style="width: 100%">100%</div>
+</div>
+</td>
+</tr>
+<tr>
+<td>2.2</td>
+<td class="indent-task">Code for the MOSFET/Actuator</td>
+<td>9/28/25</td>
+<td>10/19/25</td>
+<td>
+<div class="progress-bar">
+<div class="progress-fill" style="width: 100%">100%</div>
+</div>
+</td>
+</tr>
+<tr>
+<td>2.3</td>
+<td class="indent-task">Combined code</td>
+<td>10/12/25</td>
+<td>11/2/25</td>
+<td>
+<div class="progress-bar">
+<div class="progress-fill" style="width: 50%">50%</div>
+</div>
+</td>
+</tr>
+<tr class="category-row">
+<td>3</td>
+<td class="category-cell">Troubleshooting</td>
+<td>9/14/25</td>
+<td>11/23/25</td>
+<td>
+<div class="progress-bar">
+<div class="progress-fill" style="width: 75%">75%</div>
+</div>
+</td>
+</tr>
+<tr>
+<td>3.1</td>
+<td class="indent-task">Testing Electrical Hardware</td>
+<td>9/14/25</td>
+<td>9/28/25</td>
+<td>
+<div class="progress-bar">
+<div class="progress-fill" style="width: 100%">100%</div>
+</div>
+</td>
+</tr>
+<tr>
+<td>3.2</td>
+<td class="indent-task">Testing code for individual sensors/actuators</td>
+<td>9/28/25</td>
+<td>10/5/25</td>
+<td>
+<div class="progress-bar">
+<div class="progress-fill" style="width: 100%">100%</div>
+</div>
+</td>
+</tr>
+<tr>
+<td>3.2.1</td>
+<td class="double-indent-task">Testing code for combined parts</td>
+<td>10/22/25</td>
+<td>10/29/25</td>
+<td>
+<div class="progress-bar">
+<div class="progress-fill" style="width: 100%">100%</div>
+</div>
+</td>
+</tr>
+<tr>
+<td>3.2.2</td>
+<td class="double-indent-task">Testing after helmet implementation</td>
+<td>11/9/25</td>
+<td>11/23/25</td>
+<td>
+<div class="progress-bar">
+<div class="progress-fill zero-progress"></div>
+<span class="zero-progress-text">0%</span>
+</div>
+</td>
+</tr>
+<tr class="category-row">
+<td>4</td>
+<td class="category-cell">Presentation Preparation</td>
+<td>9/14/25</td>
+<td>11/23/25</td>
+<td>
+<div class="progress-bar">
+<div class="progress-fill" style="width: 31%">31%</div>
+</div>
+</td>
+</tr>
+<tr>
+<td>4.1</td>
+<td class="indent-task">Collect all data (charts, graphs, numbers, etc.)</td>
+<td>9/14/25</td>
+<td>11/23/25</td>
+<td>
+<div class="progress-bar">
+<div class="progress-fill" style="width: 25%">25%</div>
+</div>
+</td>
+</tr>
+<tr>
+<td>4.2</td>
+<td class="indent-task">Midterm Presentation</td>
+<td></td>
+<td></td>
+<td>
+<div class="progress-bar">
+<div class="progress-fill" style="width: 100%">100%</div>
+</div>
+</td>
+</tr>
+<tr>
+<td>4.3</td>
+<td class="indent-task">Final Presentation</td>
+<td></td>
+<td></td>
+<td>
+<div class="progress-bar">
+<div class="progress-fill zero-progress"></div>
+<span class="zero-progress-text">0%</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>4.4</td>
+<td class="indent-task">Final Paper</td>
+<td></td>
+<td></td>
+<td>
+<div class="progress-bar">
+<div class="progress-fill zero-progress"></div>
+<span class="zero-progress-text">0%</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="footer-status">
+<p><strong>Overall Progress: 66%</strong> — On schedule for completion by November 23, 2025. Next milestone: Helmet integration.</p>
+</div>
+</div>
+<div class="footer">
+<div>
+<p>NYIT College of Engineering and Computing Sciences</p>
+</div>
+<div>
+<p>SmartCap Project • EENG 489</p>
+</div>
+</div>
+</div>
+</body>
+</html>

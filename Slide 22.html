@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SmartCap – Closing Slide</title>
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Montserrat:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            font-family: 'Inter', sans-serif;
+            color: white;
+        }
+        .bg-top {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 40%;
+            background-color: #0E376D;
+            z-index: 0;
+        }
+        .bg-middle {
+            position: absolute;
+            top: 35%;
+            left: 0;
+            width: 100%;
+            height: 10%;
+            background-color: #1B4F72;
+            z-index: 0;
+            opacity: 0.8;
+        }
+        .bg-bottom {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 60%;
+            background-color: #2C3E50;
+            z-index: 0;
+        }
+        .content-container {
+            position: relative;
+            z-index: 10;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 60px;
+            text-align: center;
+        }
+        .main-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 48px;
+            margin-bottom: 24px;
+            line-height: 1.2;
+            max-width: 90%;
+            color: white;
+        }
+        .subtitle {
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+            font-size: 26px;
+            margin-top: 10px;
+            margin-bottom: 40px;
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 80%;
+            line-height: 1.4;
+        }
+        .footer {
+            position: relative;
+            z-index: 10;
+            padding: 30px;
+            display: flex;
+            justify-content: space-between;
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+    </style>
+</head>
+<body>
+<div class="slide-container">
+<div class="bg-top"></div>
+<div class="bg-middle"></div>
+<div class="bg-bottom"></div>
+<div class="content-container">
+<h1 class="main-title">SmartCap: Preventing Heat Stroke Before It Happens</h1>
+<p class="subtitle">Engineering Smarter Protection for Those Who Build Our World</p>
+</div>
+<div class="footer">
+<div>
+<p>NYIT College of Engineering and Computing Sciences</p>
+</div>
+<div>
+<p>October 29, 2025</p>
+</div>
+</div>
+</div>
+</body>
+</html>

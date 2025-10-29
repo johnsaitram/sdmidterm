@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Who Is at Risk</title>
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Montserrat:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet"/>
+<style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            font-family: 'Inter', sans-serif;
+            color: #333;
+            background-color: #ffffff;
+        }
+        .header {
+            background-color: #0E376D;
+            padding: 20px 40px;
+            color: white;
+        }
+        .header h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 36px;
+            margin: 0;
+        }
+        .content-container {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            position: relative;
+        }
+        .background-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.15;
+            object-fit: cover;
+        }
+        .content-overlay {
+            position: relative;
+            z-index: 10;
+            padding: 30px 40px;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+        .intro-text {
+            margin-bottom: 30px;
+        }
+        .intro-text p {
+            font-size: 20px;
+            line-height: 1.6;
+            max-width: 85%;
+            margin: 0 auto;
+            text-align: center;
+            font-weight: 500;
+        }
+        .workers-grid {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px 40px;
+            flex: 1;
+        }
+        .worker-type {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.85);
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(14, 55, 109, 0.1);
+            width: 22%;
+            transition: transform 0.3s ease;
+        }
+        .worker-type:hover {
+            transform: translateY(-5px);
+        }
+        .worker-type i {
+            font-size: 46px;
+            color: #0E376D;
+            margin-bottom: 15px;
+            background-color: rgba(14, 55, 109, 0.1);
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .worker-type h3 {
+            font-size: 18px;
+            font-weight: 700;
+            margin: 0 0 10px 0;
+            color: #0E376D;
+        }
+        .worker-type p {
+            font-size: 15px;
+            line-height: 1.4;
+            margin: 0;
+            color: #555;
+        }
+        .footer {
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            font-size: 14px;
+            color: rgba(14, 55, 109, 0.7);
+            border-top: 1px solid rgba(14, 55, 109, 0.1);
+            background-color: rgba(255, 255, 255, 0.9);
+            position: relative;
+            z-index: 20;
+        }
+        .accent-bar {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 6px;
+            width: 100%;
+            background-color: #00B3E3;
+        }
+    </style>
+</head>
+<body>
+<div class="slide-container">
+<div class="header">
+<h1>Who Is at Risk</h1>
+</div>
+<div class="content-container">
+<img alt="Construction Worksite Background" class="background-image" src="https://page.gensparksite.com/slides_images/870159b996d32de8867ec8e841d99ce4.jpg"/>
+<div class="content-overlay">
+<div class="intro-text">
+<p>Workers in physically demanding outdoor environments are particularly vulnerable to heat-related illnesses, including potentially fatal heat stroke</p>
+</div>
+<div class="workers-grid">
+<div class="worker-type">
+<i class="fas fa-hard-hat"></i>
+<h3>Construction Workers</h3>
+<p>Working with heavy equipment, physical labor, and often limited shade in hot environments</p>
+</div>
+<div class="worker-type">
+<i class="fas fa-hammer"></i>
+<h3>Mining &amp; Industrial</h3>
+<p>Operating in confined spaces with poor air circulation and high ambient temperatures</p>
+</div>
+<div class="worker-type">
+<i class="fas fa-fire-extinguisher"></i>
+<h3>Firefighters</h3>
+<p>Exposed to extreme heat conditions while wearing heavy protective gear</p>
+</div>
+<div class="worker-type">
+<i class="fas fa-seedling"></i>
+<h3>Outdoor Laborers</h3>
+<p>Landscapers, road crews, and agricultural workers with prolonged sun exposure</p>
+</div>
+</div>
+</div>
+</div>
+<div class="footer">
+<div>
+<p>NYIT College of Engineering and Computing Sciences</p>
+</div>
+<div>
+<p>SmartCap Project • EENG 489</p>
+</div>
+</div>
+<div class="accent-bar"></div>
+</div>
+</body>
+</html>

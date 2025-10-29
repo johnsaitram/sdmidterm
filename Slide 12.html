@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>SmartCap – Delivered System</title>
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet">
+<style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            font-family: 'Inter', sans-serif;
+            color: #333;
+            background-color: #ffffff;
+        }
+        .header {
+            background-color: #0E376D;
+            padding: 20px 40px;
+            color: white;
+        }
+        .header h1 {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 700;
+            font-size: 36px;
+            margin: 0;
+        }
+        .content-container {
+            display: flex;
+            flex: 1;
+        }
+        .left-content {
+            flex: 0 0 50%;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border-right: 2px dotted rgba(14, 55, 109, 0.3);
+            background-color: white;
+        }
+        .right-content {
+            flex: 0 0 50%;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background-color: rgba(14, 55, 109, 0.03);
+        }
+        .bullet-points {
+            margin-bottom: 30px;
+        }
+        .bullet-point {
+            display: flex;
+            margin-bottom: 18px;
+            align-items: flex-start;
+        }
+        .bullet-point .icon {
+            color: #0E376D;
+            font-size: 22px;
+            margin-right: 15px;
+            margin-top: 2px;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(14, 55, 109, 0.07);
+            border-radius: 50%;
+        }
+        .bullet-point p {
+            font-size: 18px;
+            line-height: 1.5;
+            margin: 0;
+            flex: 1;
+        }
+        .footer {
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            font-size: 14px;
+            color: rgba(14, 55, 109, 0.7);
+            border-top: 1px solid rgba(14, 55, 109, 0.1);
+            background-color: white;
+        }
+        .quote-banner {
+            position: relative;
+            margin: 0 auto;
+            background-color: rgba(14, 55, 109, 0.08);
+            padding: 15px 25px;
+            border-radius: 5px;
+            text-align: center;
+            width: 90%;
+            max-width: 800px;
+            margin-top: -15px;
+            margin-bottom: 15px;
+        }
+        .quote-banner p {
+            font-family: 'Roboto', sans-serif;
+            font-size: 20px;
+            font-weight: 500;
+            font-style: italic;
+            color: #0E376D;
+            margin: 0;
+        }
+        .section-title {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 700;
+            font-size: 24px;
+            color: #0E376D;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+        }
+        .section-title .icon {
+            margin-right: 12px;
+            font-size: 24px;
+            background-color: rgba(14, 55, 109, 0.1);
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body style="">
+<div class="slide-container">
+<div class="header">
+<h1>Delivered System – Advancing Beyond the Initial Design</h1>
+</div>
+<div class="content-container">
+<div class="left-content">
+<div class="section-title">
+<div class="icon">📝</div>
+<p>Before (Proposed)</p>
+</div>
+<div class="bullet-points">
+<div class="bullet-point">
+<div class="icon">📊</div>
+<p>3 basic sensors (GSR, Heart Rate, Skin/Ambient Temperature)</p>
+</div>
+<div class="bullet-point">
+<div class="icon">⚙️</div>
+<p>Simple threshold-based logic</p>
+</div>
+<div class="bullet-point">
+<div class="icon">⏱️</div>
+<p>Standard 5-minute cooling cycle</p>
+</div>
+<div class="bullet-point">
+<div class="icon">🔌</div>
+<p>Binary control (on/off only)</p>
+</div>
+<div class="bullet-point">
+<div class="icon">⚠️</div>
+<p>No failsafe mechanisms</p>
+</div>
+</div>
+</div>
+<div class="right-content">
+<div class="section-title">
+<div class="icon">🚀</div>
+<p>After (Delivered)</p>
+</div>
+<div class="bullet-points">
+<div class="bullet-point">
+<div class="icon">🧠</div>
+<p>Multi-sensor weighted risk index (0.0–1.0 scale)</p>
+</div>
+<div class="bullet-point">
+<div class="icon">📊</div>
+<p>PWM-based cooling intensity control (0–100% power)</p>
+</div>
+<div class="bullet-point">
+<div class="icon">⚙️</div>
+<p>Sensor failure detection &amp; automatic redistribution</p>
+</div>
+<div class="bullet-point">
+<div class="icon">🛡️</div>
+<p>Emergency failsafe mode with alerts</p>
+</div>
+</div>
+</div>
+</div>
+<div class="quote-banner">
+<p>"Progress measured not by our proposal, but by our improvements."</p>
+</div>
+<div class="footer">
+<div>
+<p>NYIT College of Engineering and Computing Sciences</p>
+</div>
+<div>
+<p>SmartCap Project • EENG 489</p>
+</div>
+</div>
+</div>
+
+</body></html>

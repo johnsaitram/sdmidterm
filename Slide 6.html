@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Our Solution Comparison</title>
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Montserrat:wght@400;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet">
+<style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            font-family: 'Inter', sans-serif;
+            color: #333;
+            background-color: #ffffff;
+        }
+        .header {
+            background-color: #0E376D;
+            padding: 20px 40px;
+            color: white;
+        }
+        .header h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 36px;
+            margin: 0;
+        }
+        .content-container {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            padding: 30px 40px;
+        }
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .data-table thead {
+            background-color: #0E376D;
+            color: white;
+        }
+        .data-table th {
+            padding: 15px;
+            text-align: center;
+            font-weight: 600;
+            font-size: 18px;
+            border-right: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .data-table th:first-child {
+            text-align: left;
+            width: 35%;
+        }
+        .data-table th:last-child {
+            border-right: none;
+            background-color: rgba(0, 179, 227, 0.3);
+        }
+        .data-table tbody tr:nth-child(odd) {
+            background-color: rgba(14, 55, 109, 0.05);
+        }
+        .data-table td {
+            padding: 12px 15px;
+            text-align: center;
+            border-right: 1px solid rgba(14, 55, 109, 0.1);
+            font-size: 16px;
+        }
+        .data-table td:first-child {
+            text-align: left;
+            font-weight: 600;
+            border-left: 4px solid transparent;
+        }
+        .data-table td:last-child {
+            border-right: none;
+            background-color: rgba(0, 179, 227, 0.05);
+        }
+        .data-table tr:hover td {
+            background-color: rgba(14, 55, 109, 0.08);
+        }
+        .data-table tr:hover td:first-child {
+            border-left: 4px solid #0E376D;
+        }
+        .data-table tr:hover td:last-child {
+            background-color: rgba(0, 179, 227, 0.1);
+        }
+        .indicator {
+            font-size: 22px;
+        }
+        .footer-callout {
+            background-color: rgba(14, 55, 109, 0.05);
+            border-radius: 8px;
+            padding: 15px 25px;
+            margin-top: 30px;
+            text-align: center;
+            border-left: 4px solid #0E376D;
+        }
+        .footer-callout p {
+            margin: 0;
+            font-size: 16px;
+            font-weight: 500;
+            color: #0E376D;
+        }
+        .footer {
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            font-size: 14px;
+            color: rgba(14, 55, 109, 0.7);
+            border-top: 1px solid rgba(14, 55, 109, 0.1);
+        }
+    </style>
+</head>
+<body style="">
+<div class="slide-container">
+<div class="header">
+<h1>Our Solution – Why SmartCap</h1>
+</div>
+<div class="content-container">
+<table class="data-table">
+<thead>
+<tr>
+<th>Feature</th>
+<th>Chen et al. (2017)</th>
+<th>Khan et al. (2023)</th>
+<th>SmartCap (Our Solution)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GSR Monitoring</td>
+<td><span class="indicator">✅</span></td>
+<td><span class="indicator">❌</span></td>
+<td><span class="indicator">✅</span></td>
+</tr>
+<tr>
+<td>Heart Rate Monitoring</td>
+<td><span class="indicator">✅</span></td>
+<td><span class="indicator">❌</span></td>
+<td><span class="indicator">✅</span></td>
+</tr>
+<tr>
+<td>Ambient / Body Temp</td>
+<td><span class="indicator">✅</span></td>
+<td><span class="indicator">✅</span></td>
+<td><span class="indicator">✅</span></td>
+</tr>
+<tr>
+<td>Automated Cooling</td>
+<td><span class="indicator">❌</span></td>
+<td><span class="indicator">✅</span></td>
+<td><span class="indicator">✅</span></td>
+</tr>
+<tr>
+<td>Multi-sensor Fusion</td>
+<td><span class="indicator">❌</span></td>
+<td><span class="indicator">❌</span></td>
+<td><span class="indicator">✅</span></td>
+</tr>
+<tr>
+<td>Early Proactive Intervention</td>
+<td><span class="indicator">❌</span></td>
+<td><span class="indicator">❌</span></td>
+<td><span class="indicator">✅</span></td>
+</tr>
+<tr>
+<td>Practical Sensor Placement</td>
+<td><span class="indicator">❌</span></td>
+<td><span class="indicator">❌</span></td>
+<td><span class="indicator">✅</span></td>
+</tr>
+</tbody>
+</table>
+<div class="footer-callout">
+<p>By acting early, SmartCap prevents workers from ever reaching the critical stage of heat stroke.</p>
+</div>
+</div>
+<div class="footer">
+<div>
+<p>NYIT College of Engineering and Computing Sciences</p>
+</div>
+<div>
+<p>SmartCap Project • EENG 489</p>
+</div>
+</div>
+</div>
+
+</body></html>

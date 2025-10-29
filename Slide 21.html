@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SmartCap – Team Roles &amp; Execution Plan</title>
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet"/>
+<style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            font-family: 'Inter', sans-serif;
+            color: #333;
+            background-color: #ffffff;
+        }
+        .header {
+            background-color: #0E376D;
+            padding: 20px 40px;
+            color: white;
+        }
+        .header h1 {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 700;
+            font-size: 36px;
+            margin: 0;
+        }
+        .content-container {
+            display: flex;
+            flex: 1;
+        }
+        .left-content {
+            flex: 0 0 50%;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .right-content {
+            flex: 0 0 50%;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background-color: rgba(14, 55, 109, 0.05);
+            border-left: 1px solid rgba(14, 55, 109, 0.1);
+        }
+        .team-card {
+            background-color: white;
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+        .team-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+        .team-avatar {
+            background-color: #0E376D;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 16px;
+            font-size: 24px;
+            font-weight: 600;
+        }
+        .team-name {
+            font-size: 22px;
+            font-weight: 700;
+            color: #0E376D;
+            margin: 0;
+        }
+        .tag-container {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 12px;
+            margin-top: 12px;
+        }
+        .role-tag {
+            background-color: rgba(14, 55, 109, 0.08);
+            border-radius: 8px;
+            padding: 6px 12px;
+            margin-right: 8px;
+            margin-bottom: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            color: #0E376D;
+            display: flex;
+            align-items: center;
+        }
+        .role-description {
+            font-size: 15px;
+            line-height: 1.5;
+            color: #444;
+            margin: 0;
+        }
+        .guidance-section {
+            background-color: white;
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+        .guidance-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: #0E376D;
+            margin: 0 0 20px 0;
+            text-align: center;
+            position: relative;
+        }
+        .guidance-title:after {
+            content: "";
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: #0E376D;
+            margin: 12px auto 0;
+        }
+        .mentor-card {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .mentor-icon {
+            background-color: rgba(14, 55, 109, 0.1);
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 16px;
+        }
+        .mentor-icon i {
+            font-size: 20px;
+            color: #0E376D;
+        }
+        .mentor-info {
+            flex: 1;
+        }
+        .mentor-info h3 {
+            font-size: 18px;
+            font-weight: 600;
+            color: #0E376D;
+            margin: 0 0 4px 0;
+        }
+        .mentor-info p {
+            font-size: 14px;
+            margin: 0;
+            line-height: 1.4;
+            color: #555;
+        }
+        .footer {
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            font-size: 14px;
+            color: rgba(14, 55, 109, 0.7);
+            border-top: 1px solid rgba(14, 55, 109, 0.1);
+        }
+    </style>
+</head>
+<body>
+<div class="slide-container">
+<div class="header">
+<h1>Team Roles &amp; Execution Plan</h1>
+</div>
+<div class="content-container">
+<div class="left-content">
+<div class="team-card">
+<div class="team-header">
+<div class="team-avatar">A</div>
+<h2 class="team-name">Aaron Ishal</h2>
+</div>
+<div class="tag-container">
+<div class="role-tag">⚡ Hardware Integration</div>
+<div class="role-tag">🔧 Circuit Design</div>
+<div class="role-tag">🧰 System Assembly</div>
+</div>
+<p class="role-description">Leads remaining hardware integration and circuitry work. Responsible for assembling the SmartCap, wiring all sensors, optimizing circuits, and final electrical testing.</p>
+</div>
+<div class="team-card">
+<div class="team-header">
+<div class="team-avatar">J</div>
+<h2 class="team-name">John Saitram</h2>
+</div>
+<div class="tag-container">
+<div class="role-tag">💻 Sensor Fusion</div>
+<div class="role-tag">⚙️ Control Systems</div>
+<div class="role-tag">🔍 Troubleshooting</div>
+</div>
+<p class="role-description">Focuses on software, control systems, and sensor fusion logic. Responsible for developing the final multi-sensor control algorithm, adaptive cooling logic, and system calibration.</p>
+</div>
+</div>
+<div class="right-content">
+<div class="guidance-section">
+<h2 class="guidance-title">With Continued Guidance From</h2>
+<div class="mentor-card">
+<div class="mentor-icon">
+<i class="fas fa-chalkboard-teacher"></i>
+</div>
+<div class="mentor-info">
+<h3>Dr. Azhar Ilyas</h3>
+<p>Academic supervision, weekly meetings, and technical direction.</p>
+</div>
+</div>
+<div class="mentor-card">
+<div class="mentor-icon">
+<i class="fas fa-flask"></i>
+</div>
+<div class="mentor-info">
+<h3>Sal</h3>
+<p>Laboratory assistance and testing support.</p>
+</div>
+</div>
+<div class="mentor-card">
+<div class="mentor-icon">
+<i class="fas fa-tools"></i>
+</div>
+<div class="mentor-info">
+<h3>Fanning</h3>
+<p>Mechanical support, including helmet modification and sensor mounting.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="footer">
+<div>
+<p>NYIT College of Engineering and Computing Sciences</p>
+</div>
+<div>
+<p>SmartCap Project – EENG 489</p>
+</div>
+</div>
+</div>
+</body>
+</html>

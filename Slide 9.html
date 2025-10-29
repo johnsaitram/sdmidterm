@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html data-theme="light" lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Sensor Development – GSR &amp; Temperature System</title>
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Montserrat:wght@400;600;700&amp;family=Roboto+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet">
+<style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            font-family: 'Inter', sans-serif;
+            color: #333;
+            background-color: #ffffff;
+        }
+        .header {
+            background-color: #0E376D;
+            padding: 20px 40px;
+            color: white;
+        }
+        .header h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 36px;
+            margin: 0;
+        }
+        .content-container {
+            display: flex;
+            flex: 1;
+        }
+        .left-content {
+            flex: 0 0 60%;
+            padding: 30px 35px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .right-content {
+            flex: 0 0 40%;
+            padding: 30px 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(14, 55, 109, 0.05);
+            border-left: 1px solid rgba(14, 55, 109, 0.1);
+        }
+        .bullet-points {
+            margin-bottom: 20px;
+        }
+        .bullet-point {
+            display: flex;
+            margin-bottom: 16px;
+            align-items: flex-start;
+        }
+        .bullet-point i {
+            color: #0E376D;
+            font-size: 20px;
+            margin-right: 12px;
+            margin-top: 3px;
+        }
+        .bullet-point p {
+            font-size: 17px;
+            line-height: 1.5;
+            margin: 0;
+        }
+        .formula-box {
+            background-color: rgba(14, 55, 109, 0.08);
+            border-left: 4px solid #0E376D;
+            padding: 12px 16px;
+            margin: 15px 0;
+            border-radius: 0 6px 6px 0;
+        }
+        .formula {
+            font-family: 'Roboto Mono', monospace;
+            font-size: 19px;
+            font-style: italic;
+            color: #0E376D;
+            text-align: center;
+            margin-bottom: 6px;
+        }
+        .citation {
+            font-size: 14px;
+            color: #666;
+            text-align: right;
+            font-style: italic;
+        }
+        .code-container {
+            width: 95%;
+            background-color: #f5f5f5;
+            border-radius: 8px;
+            padding: 12px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 15px;
+            font-family: 'Roboto Mono', monospace;
+        }
+        .code-line {
+            margin: 0;
+            padding: 2px 0;
+            font-size: 13px;
+            line-height: 1.4;
+            color: #333;
+        }
+        .comment {
+            color: #008000;
+        }
+        .keyword {
+            color: #0000FF;
+        }
+        .variable {
+            color: #9932CC;
+        }
+        .string {
+            color: #A31515;
+        }
+        .icon-row {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            margin-top: 15px;
+        }
+        .sensor-icon {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        .sensor-icon i {
+            font-size: 26px;
+            color: #0E376D;
+            background-color: rgba(14, 55, 109, 0.1);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 8px;
+        }
+        .sensor-icon p {
+            font-size: 14px;
+            font-weight: 600;
+            margin: 0;
+        }
+        .footer {
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            font-size: 14px;
+            color: rgba(14, 55, 109, 0.7);
+            border-top: 1px solid rgba(14, 55, 109, 0.1);
+        }
+    </style>
+</head>
+<body style="">
+<div class="slide-container">
+<div class="header">
+<h1>Sensor Development – GSR &amp; Temperature System</h1>
+</div>
+<div class="content-container">
+<div class="left-content">
+<div class="bullet-points">
+<div class="bullet-point">
+<i class="fas fa-wrench" style="position: relative; transform: translate(-1.21379px, -54.6207px);"><br></i>
+<p style="position: relative; transform: translate(-3.64138px, -80.1103px);"><strong>GSR Auto-Calibration:</strong> Added automatic calibration to Galvanic Skin Response sensors to ensure consistent baseline readings regardless of environmental conditions or skin variations.</p>
+</div>
+<div class="bullet-point">
+<i class="fas fa-thermometer-half" style="position: relative; transform: translate(-1.21379px, 25.4897px);"><br></i>
+<p><strong>Continuous Temperature Monitoring:</strong> The system continuously reads both skin and ambient temperatures, applying the following validated research-based formula to estimate core body temperature.</p>
+</div>
+</div>
+<div class="formula-box">
+<div class="formula">coreTemp = skinTemp + α × (skinTemp – ambientTemp)</div>
+<div class="citation">Using α = 0.3094 (Chen et al.)</div>
+</div>
+</div>
+<div class="right-content">
+<div class="code-container">
+<p class="code-line"><span class="keyword">void</span> <span class="variable">setup</span>() {</p>
+<p class="code-line"> <span class="variable">Serial</span>.<span class="variable">begin</span>(9600);</p>
+<p class="code-line"> <span class="variable">Serial</span>.<span class="variable">println</span>(<span class="string">"=== GSR Sensor Calibration Starting ==="</span>);</p>
+<p class="code-line"> <span class="variable">Serial</span>.<span class="variable">println</span>(<span class="string">"Please do NOT wear the sensor during this phase."</span>);</p>
+<p class="code-line"></p>
+<p class="code-line"> <span class="keyword">long</span> sum = 0;</p>
+<p class="code-line"></p>
+<p class="code-line"> <span class="comment">// Take 100 readings to determine calibration baseline</span></p>
+<p class="code-line"> <span class="keyword">for</span> (<span class="keyword">int</span> i = 0; i &lt; 100; i++) {</p>
+<p class="code-line">    sensorValue = <span class="variable">analogRead</span>(GSR_PIN);</p>
+<p class="code-line">    sum += sensorValue;</p>
+<p class="code-line"> <span class="variable">delay</span>(10);</p>
+<p class="code-line">  }</p>
+<p class="code-line"></p>
+<p class="code-line">  calibrationValue = sum / 100;  <span class="comment">// average baseline</span></p>
+<p class="code-line"> <span class="variable">Serial</span>.<span class="variable">print</span>(<span class="string">"Calibration complete. Baseline = "</span>);</p>
+<p class="code-line"> <span class="variable">Serial</span>.<span class="variable">println</span>(calibrationValue);</p>
+<p class="code-line"> <span class="variable">Serial</span>.<span class="variable">println</span>(<span class="string">"You can now wear the sensor. Readings and graph will begin..."</span>);</p>
+<p class="code-line"> <span class="variable">delay</span>(2000);</p>
+<p class="code-line">}</p>
+</div>
+<div class="icon-row">
+<div class="sensor-icon">
+<i class="fas fa-hand-paper"></i>
+<p>GSR SENSOR</p>
+</div>
+</div>
+</div>
+</div>
+<div class="footer">
+<div>
+<p>NYIT College of Engineering and Computing Sciences</p>
+</div>
+<div>
+<p>SmartCap Project • EENG 489</p>
+</div>
+</div>
+</div>
+
+</body></html>

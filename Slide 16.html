@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+
+<html data-theme="light" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Combined Logic State Table</title>
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Montserrat:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet"/>
+<style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            font-family: 'Inter', sans-serif;
+            color: #333;
+            background-color: #ffffff;
+        }
+        .header {
+            background-color: #0E376D;
+            padding: 20px 40px;
+            color: white;
+        }
+        .header h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 36px;
+            margin: 0;
+        }
+        .content-container {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            padding: 30px 40px;
+        }
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .data-table thead {
+            background-color: #0E376D;
+            color: white;
+        }
+        .data-table th {
+            padding: 15px;
+            text-align: center;
+            font-weight: 600;
+            font-size: 18px;
+            border-right: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .data-table th:first-child {
+            text-align: left;
+            width: 25%;
+        }
+        .data-table th:last-child {
+            border-right: none;
+        }
+        .data-table tbody tr:nth-child(odd) {
+            background-color: rgba(14, 55, 109, 0.05);
+        }
+        .data-table td {
+            padding: 12px 15px;
+            text-align: center;
+            border-right: 1px solid rgba(14, 55, 109, 0.1);
+            font-size: 16px;
+        }
+        .data-table tbody tr:not(.highlight-row) td:first-child {
+            text-align: left;
+            font-weight: 600;
+        }
+        .data-table .highlight-row {
+            border: 0 !important;
+        }
+        .data-table .highlight-row td {
+            background-color: rgba(14, 55, 109, 0.05) !important;
+            border-top: 0 !important;
+            border-bottom: 0 !important;
+            border-left: 0 !important;
+            border-right: 0 !important;
+        }
+        .data-table .highlight-row td:first-child {
+            text-align: left;
+            font-weight: 600;
+            border-left: 0 !important;
+        }
+        .data-table .highlight-row:hover td {
+            border: 0 !important;
+        }
+        .data-table .highlight-row:hover td:first-child {
+            border: 0 !important;
+            border-left: 0 !important;
+        }
+        .data-table td:last-child {
+            border-right: none;
+        }
+        .data-table tr:hover td {
+            background-color: rgba(14, 55, 109, 0.08);
+        }
+        .indicator {
+            font-size: 22px;
+        }
+        .footer-callout {
+            background-color: rgba(14, 55, 109, 0.05);
+            border-radius: 8px;
+            padding: 15px 25px;
+            margin-top: 30px;
+            text-align: center;
+            border-left: 4px solid #0E376D;
+        }
+        .footer-callout p {
+            margin: 0;
+            font-size: 16px;
+            font-weight: 500;
+            color: #0E376D;
+        }
+        .footer {
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            font-size: 14px;
+            color: rgba(14, 55, 109, 0.7);
+            border-top: 1px solid rgba(14, 55, 109, 0.1);
+        }
+    </style>
+</head>
+<body>
+<div class="slide-container">
+<div class="header">
+<h1>Combined Logic – State Table</h1>
+</div>
+<div class="content-container">
+<table class="data-table">
+<thead>
+<tr>
+<th>Total Risk</th>
+<th>System State</th>
+<th>Fan / Peltier PWM</th>
+<th>Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&lt; 0.3</td>
+<td>Idle (cooling OFF)</td>
+<td>0% / 0%</td>
+<td>Always off below safe zone</td>
+</tr>
+<tr>
+<td>0.3 - 0.4</td>
+<td>Idle → Stand-by buffer</td>
+<td>0% / 0%</td>
+<td>Still off until clearly hot</td>
+</tr>
+<tr>
+<td>0.4 - 0.6</td>
+<td>Pre-Cool</td>
+<td>40% / 30%</td>
+<td>Mild cooling once ON</td>
+</tr>
+<tr>
+<td>0.6 - 0.8</td>
+<td>Full-Cool</td>
+<td>80% / 60%</td>
+<td>Strong cooling</td>
+</tr>
+<tr>
+<td>&gt; 0.8</td>
+<td>Emergency</td>
+<td>100% / 100%</td>
+<td>Max cooling</td>
+</tr>
+<tr class="highlight-row">
+<td>↓ below 0.4</td>
+<td>Cooling turns OFF</td>
+<td>0% / 0%</td>
+<td>Hysteresis OFF point</td>
+</tr>
+</tbody>
+</table>
+<div class="footer-callout">
+<p>This combined approach creates a smooth, effective cooling system with smart power management and prevents rapid on/off cycling.</p>
+</div>
+</div>
+<div class="footer">
+<div>
+<p>NYIT College of Engineering and Computing Sciences</p>
+</div>
+<div>
+<p>SmartCap Project • EENG 489</p>
+</div>
+</div>
+</div>
+</body>
+</html>

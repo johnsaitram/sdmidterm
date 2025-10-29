@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Existing Research and Gaps</title>
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Montserrat:wght@400;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet">
+<style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            font-family: 'Inter', sans-serif;
+            color: #333;
+            background-color: #ffffff;
+        }
+        .header {
+            background-color: #0E376D;
+            padding: 20px 40px;
+            color: white;
+        }
+        .header h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 36px;
+            margin: 0;
+        }
+        .content-container {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            padding: 30px 40px;
+        }
+        .cards-container {
+            display: flex;
+            justify-content: space-between;
+            flex: 1;
+        }
+        .research-card {
+            width: 48%;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid rgba(14, 55, 109, 0.1);
+        }
+        .card-header {
+            background-color: #0E376D;
+            color: white;
+            padding: 15px 20px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+        }
+        .card-header i {
+            font-size: 24px;
+            margin-right: 10px;
+        }
+        .card-content {
+            padding: 20px;
+            flex: 1;
+        }
+        .feature-list {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        .feature-item {
+            display: flex;
+            margin-bottom: 14px;
+            align-items: flex-start;
+        }
+        .feature-icon {
+            font-size: 22px;
+            margin-right: 12px;
+            flex-shrink: 0;
+            width: 24px;
+            text-align: center;
+        }
+        .feature-icon.check {
+            color: #22C55E;
+        }
+        .feature-icon.cross {
+            color: #EF4444;
+        }
+        .feature-text {
+            font-size: 16px;
+            line-height: 1.4;
+            margin: 0;
+            padding-top: 2px;
+        }
+        .gap-banner {
+            margin-top: 30px;
+            background-color: rgba(14, 55, 109, 0.05);
+            border-radius: 8px;
+            padding: 16px 25px;
+            border-left: 4px solid #0E376D;
+        }
+        .gap-banner p {
+            margin: 0;
+            font-size: 16px;
+            font-weight: 500;
+            color: #0E376D;
+            line-height: 1.5;
+        }
+        .footer {
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            font-size: 14px;
+            color: rgba(14, 55, 109, 0.7);
+            border-top: 1px solid rgba(14, 55, 109, 0.1);
+            margin-top: auto;
+        }
+    </style>
+</head>
+<body style="">
+<div class="slide-container">
+<div class="header">
+<h1>State-of-the-art and Gaps</h1>
+</div>
+<div class="content-container">
+<div class="cards-container">
+<div class="research-card">
+<div class="card-header">
+<i class="fas fa-file-alt"></i>
+<span>Chen et al., 2017</span>
+</div>
+<div class="card-content">
+<ul class="feature-list">
+<li class="feature-item">
+<span class="feature-icon check">✅</span>
+<p class="feature-text"><strong>GSR Monitoring:</strong> Included galvanic skin response</p>
+</li>
+<li class="feature-item">
+<span class="feature-icon check">✅</span>
+<p class="feature-text"><strong>Heart Rate Monitoring:</strong> Included heart rate sensing</p>
+</li>
+<li class="feature-item">
+<span class="feature-icon check">✅</span>
+<p class="feature-text"><strong>Ambient/Body Temperature:</strong> Included temperature sensing</p>
+</li>
+<li class="feature-item">
+<span class="feature-icon cross">❌</span>
+<p class="feature-text"><strong>Automated Cooling:</strong> No cooling mechanism</p>
+</li>
+<li class="feature-item">
+<span class="feature-icon cross">❌</span>
+<p class="feature-text"><strong>Multi-sensor Fusion:</strong> Sensors used independently</p>
+</li>
+<li class="feature-item">
+<span class="feature-icon cross">❌</span>
+<p class="feature-text"><strong>Early Proactive Intervention:</strong> Reactive approach</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="research-card">
+<div class="card-header">
+<i class="fas fa-file-alt"></i>
+<span>Khan et al., 2023</span>
+</div>
+<div class="card-content">
+<ul class="feature-list">
+<li class="feature-item">
+<span class="feature-icon check">✅</span>
+<p class="feature-text"><strong>Core Temperature Trigger:</strong> Single-point detection</p>
+</li>
+<li class="feature-item">
+<span class="feature-icon cross">❌</span>
+<p class="feature-text"><strong>GSR/Heart Rate:</strong> Did not consider these early warning signs</p>
+</li>
+<li class="feature-item">
+<span class="feature-icon cross">❌</span>
+<p class="feature-text"><strong>Early Detection:</strong> Cooling only starts when core temp is already too high</p>
+</li>
+<li class="feature-item">
+<span class="feature-icon check">✅</span>
+<p class="feature-text"><strong>Automated Cooling:</strong> Included cooling mechanism</p>
+</li>
+<li class="feature-item">
+<span class="feature-icon cross">❌</span>
+<p class="feature-text"><strong>Multi-sensor Fusion:</strong> Single sensor approach</p>
+</li>
+<li class="feature-item">
+<span class="feature-icon cross">❌</span>
+<p class="feature-text"><strong>Risk of Heat Stress Damage:</strong> Still possible due to late activation</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="gap-banner">
+<p><strong>State-of-the-art Gap:</strong> Existing solutions either use multiple sensors without automation (Chen) or provide cooling too late (Khan). Both approaches lack proactive intervention through multi-sensor fusion, creating risk of heat stress damage before prevention systems activate.</p>
+</div>
+</div>
+<div class="footer">
+<div>
+<p>NYIT College of Engineering and Computing Sciences</p>
+</div>
+<div>
+<p>SmartCap Project • EENG 489</p>
+</div>
+</div>
+</div>
+
+</body></html>

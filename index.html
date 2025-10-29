@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>SmartCap – Senior Design Presentation</title>
+
+<!-- Tailwind & Fonts (online) -->
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+  body {
+    font-family: 'Inter', sans-serif;
+    background-color: #0E376D;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  .nav-container {
+    text-align: center;
+  }
+  h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 40px;
+  }
+  .buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  button {
+    background-color: #1B4F72;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 8px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  button:hover {
+    background-color: #2E86C1;
+  }
+</style>
+</head>
+<body>
+
+<div class="nav-container">
+  <h1>SmartCap – Senior Design Midterm</h1>
+  <p class="mb-8">Aaron Ishal &amp; John Saitram</p>
+
+  <div class="buttons">
+    <button onclick="prevSlide()">⬅ Previous</button>
+    <button onclick="nextSlide()">Next ➡</button>
+  </div>
+</div>
+
+<script>
+  // List your slides here (in order)
+  const slides = [
+    'Slide 1.html',
+    'Slide 2.html',
+    'Slide 3.html',
+    'Slide 4.html',
+    'Slide 5.html',
+    'Slide 6.html',
+    'Slide 7.html',
+    'Slide 8.html',
+    'Slide 9.html',
+    'Slide 10.html',
+    'Slide 11.html',
+    'Slide 12.html',
+    'Slide 13.html',
+    'Slide 14.html',
+    'Slide 15.html',
+    'Slide 16.html',
+    'Slide 17.html',
+    'Slide 18.html',
+    'Slide 19.html',
+    'Slide 20.html',
+    'Slide 21.html',
+    'Slide 22.html',
+
+  ];
+
+  // Track current slide index
+  let current = 0;
+
+  // Navigate functions
+  function nextSlide() {
+    current = (current + 1) % slides.length;
+    window.location.href = slides[current];
+  }
+
+  function prevSlide() {
+    current = (current - 1 + slides.length) % slides.length;
+    window.location.href = slides[current];
+  }
+
+  // Keyboard controls
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight') nextSlide();
+    if (e.key === 'ArrowLeft') prevSlide();
+  });
+</script>
+
+</body>
+</html>
